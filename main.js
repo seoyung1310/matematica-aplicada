@@ -3,8 +3,8 @@ const titulo = document.getElementById("titulo");
 const datas = [
   {texto: "Passar no enem", data: "2026-11-11"},
   {texto: "Aprender tailandês", data: "2026-07-25"},
-  {texto: "Entrar na faculdade", data: "2027-02-01"},
-  {texto: "Entrar para a área de trabalho", data: "2027-02-05"}
+  {texto: "Passar na faculdade", data: "2027-02-01"},
+  {texto: "Entrar na área de trabalho", data: "2027-02-05"}
 ];
 
 let atual = 0;
