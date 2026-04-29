@@ -1,41 +1,40 @@
-// Troca de abas
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".content");
+const titulo = document.getElementById("titulo");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    contents.forEach(c => c.classList.remove("active"));
+const datas = [
+  {texto: "Estudar 4 cursos na Alura", data: "2026-05-10"},
+  {texto: "Criar 5 projetos em JavaScript", data: "2026-06-01"},
+  {texto: "Criar um portfólio", data: "2026-07-01"},
+  {texto: "Atualizar meu currículo", data: "2026-05-20"}
+];
 
-    tab.classList.add("active");
-    document.getElementById(tab.dataset.target).classList.add("active");
+let atual = 0;
+
+// trocar abas
+document.querySelectorAll(".tab").forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    atual = i;
+    titulo.innerText = datas[i].texto;
   });
 });
 
-// Função de contagem regressiva
-function startTimers() {
-  const timers = document.querySelectorAll(".timer");
+// timer
+function atualizarTempo() {
+  const destino = new Date(datas[atual].data).getTime();
+  const agora = new Date().getTime();
+  const diff = destino - agora;
 
-  timers.forEach(timer => {
-    const targetDate = new Date(timer.dataset.date).getTime();
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const min = Math.floor((diff / (1000 * 60)) % 60);
+  const seg = Math.floor((diff / 1000) % 60);
 
-    setInterval(() => {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-
-      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diff / (1000 * 60)) % 60);
-      const segundos = Math.floor((diff / 1000) % 60);
-
-      timer.innerHTML = `
-        <div class="time-box">${dias}<span>dias</span></div>
-        <div class="time-box">${horas}<span>horas</span></div>
-        <div class="time-box">${minutos}<span>min</span></div>
-        <div class="time-box">${segundos}<span>seg</span></div>
-      `;
-    }, 1000);
-  });
+  document.getElementById("dias").innerText = dias;
+  document.getElementById("horas").innerText = horas;
+  document.getElementById("min").innerText = min;
+  document.getElementById("seg").innerText = seg;
 }
 
-startTimers();
+setInterval(atualizarTempo, 1000);
