@@ -1,61 +1,77 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #0f0f1a;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #070816, #0f1230);
   color: white;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
 }
 
 .container {
-  background: #1c1c2e;
   padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 600px;
+}
+
+h2 {
+  margin-bottom: 20px;
 }
 
 .tabs {
   display: flex;
-  gap: 5px;
-  margin-bottom: 20px;
+  background: #1b1d3a;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
 
 .tab {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
+  background: transparent;
   border: none;
-  background: #2a2a40;
-  color: white;
+  color: #aaa;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  background: rgba(255,255,255,0.05);
 }
 
 .tab.active {
+  color: white;
   border-bottom: 3px solid #00ff88;
 }
 
-.content {
-  display: none;
+.card {
+  background: #12142b;
+  padding: 40px 20px;
+  border-radius: 0 0 20px 20px;
   text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.content.active {
-  display: block;
+h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.sub {
+  color: #00ff88;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
 }
 
 .timer {
-  margin-top: 20px;
-  font-size: 28px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
 }
 
-.time-box {
-  text-align: center;
+.timer span {
+  font-size: 50px;
+  font-weight: bold;
 }
 
-.time-box span {
+.timer small {
   display: block;
-  font-size: 14px;
   color: #00ff88;
+  margin-top: 5px;
 }
