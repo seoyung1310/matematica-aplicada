@@ -1,10 +1,10 @@
 const titulo = document.getElementById("titulo");
 
 const datas = [
-  {texto: "Estudar 4 cursos na Alura", data: "2026-05-10"},
-  {texto: "Criar 5 projetos em JavaScript", data: "2026-06-01"},
-  {texto: "Criar um portfólio", data: "2026-07-01"},
-  {texto: "Atualizar meu currículo", data: "2026-05-20"}
+  {texto: "Passar no enem", data: "2026-11-11"},
+  {texto: "Aprender tailandês", data: "2026-07-25"},
+  {texto: "Entrar na faculdade", data: "2027-02-01"},
+  {texto: "Entrar para a área de trabalho", data: "2027-02-05"}
 ];
 
 let atual = 0;
